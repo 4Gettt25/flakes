@@ -14,7 +14,7 @@
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            pkgs.python39
+            pkgs.python310
             pkgs.poetry
             pkgs.git
             # add more Python-related packages here
