@@ -15,7 +15,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = [
             # Pick your desired PHP version—e.g., php80 or php81
-            pkgs.php80
+            pkgs.php84
             pkgs.composer    # PHP dependency manager
             # add other PHP-related tools (e.g. phpExtensions.xdebug) here
           ];
