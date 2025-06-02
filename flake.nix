@@ -15,7 +15,7 @@
     php.url       = "github:4Gettt25/flakes?dir=php";
   };
 
-  outputs = { self, nixpkgs, flake-utils, python310, php, ... }:
+  outputs = { self, nixpkgs, flake-utils, python310, php, python313, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
