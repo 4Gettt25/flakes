@@ -6,10 +6,13 @@
     nixpkgs.url     = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    # Each language folder becomes its own flake under the same GitHub repo
+
+    # Python subflakes
     python310.url = "github:4Gettt25/flakes?dir=python/python310";
+    python313.url = "github:4Gettt25/flakes?dir=python/python313";
+
+    # PHP subflakes
     php.url       = "github:4Gettt25/flakes?dir=php";
-    # (Add more: e.g. php8.url = "github:4Gettt25/flakes?dir=php8"; etc.)
   };
 
   outputs = { self, nixpkgs, flake-utils, python310, php, ... }:
@@ -28,7 +31,11 @@
         };
 
         # Forward each subflake’s devShell
+        # Python 3.13 and 3.10
+        devShells.python313 = python313.devShells.${system}.default;
         devShells.python310 = python310.devShells.${system}.default;
+
+        # PHP
         devShells.php       = php.devShells.${system}.default;
       }
     );
