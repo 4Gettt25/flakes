@@ -13,6 +13,7 @@
 
     # PHP subflakes
     php.url       = "github:4Gettt25/flakes?dir=php";
+    logbookPhp.url = "github:4Gettt25/flakes?dir=php/logbook-php";
   };
 
   outputs = { 
@@ -21,6 +22,7 @@
     flake-utils,
     python310,
     php,
+    logbookPhp,
     python313,
     ...
     }:
@@ -45,6 +47,9 @@
 
         # PHP
         devShells.php       = php.devShells.${system}.default;
+        devShells."logbook-php" = logbookPhp.devShells.${system}.default;
+
+        packages."logbook-php" = logbookPhp.packages.${system}.default;
       }
     );
 }
