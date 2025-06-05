@@ -18,7 +18,6 @@
             pkgs.php83Packages.composer
             pkgs.nodejs_20
             pkgs.postgresql
-            # Laravel/Filament installed via Composer in shellHook
           ];
         };
 
