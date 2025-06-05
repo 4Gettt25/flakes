@@ -17,9 +17,7 @@
             pkgs.php83
             pkgs.php83Packages.composer
             pkgs.nodejs_20
-            # Framework tooling
-            pkgs.php83Packages.laravel
-            pkgs.php83Packages.filament
+            # install Laravel/Filament with Composer
           ];
         };
 
@@ -28,8 +26,7 @@
             pkgs.php83
             pkgs.php83Packages.composer
             pkgs.nodejs_20
-            pkgs.php83Packages.laravel
-            pkgs.php83Packages.filament
+            # install Laravel/Filament with Composer
           ];
           shellHook = ''
             export NIX_CONFIG="experimental-features = nix-command flakes"
